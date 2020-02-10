@@ -5,6 +5,7 @@
   --color-purple: #7159c1;
   --color-primary-links: #777;
   --color-backgroundHead: #fff;
+  --color-secondary: #f7df1e
 }
 
 * {
@@ -65,4 +66,64 @@ header {
 .links a:hover::after {
   width: 100%;
   transition: width 200ms ease-in-out;
+}
+
+.card {
+  background-color: #fff ;
+  width: 800px;
+  min-height: 400px;
+  margin: 4.5em auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.8);
+}
+
+.card .avatar {
+    background: url('https://source.unsplash.com/collection/8684183/500x500') no-repeat center center/ cover  ;
+}
+
+/* DETAILS */
+.details {
+  padding: 32px;
+}
+
+.details .item {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 16px 0;
+}
+
+.details h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-purple);
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+  font-size: 1.4em;
+  line-height: 1.4;
+  letter-spacing: 0.7;
+  color: #777;
+}
+
+.details .item:nth-child(2) {
+ border: none;
+}
+
+.details .item div:nth-child(2) {
+  color: #555;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+.details .item span {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--color-secondary);
+  border-radius: 16px;
+  color: #777;
+  margin: 8px 4px 0 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
