@@ -20,7 +20,7 @@ exports.show = (req, res) => {
 //post
 exports.post = (req, res) => {
   const keys = Object.keys(req.body);
-
+  console.log(req.body);
   keys.forEach(key => {
     if(req.body[key] == "") return res.send("Please, fill all fields");
   })

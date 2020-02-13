@@ -22,7 +22,7 @@
 
 <div class="item">
   <div>Grau de Escolaridade</div>
-  <select name="select">
+  <select name="graduete">
     <option value="M">Ensino Médio</option>
     <option value="S">Ensino Superior</option>
     <option value="D">Mestrado e Doutorado</option>
@@ -30,9 +30,23 @@
 </div>
 
 <div class="item">
+  <div>Tipo de Aula</div>
+    <div>
+      <input type="radio" id="presencial" name="classType" value="presencial">
+      <label for="presencial">Presencial</label>
+    </div>
+  
+    <div>
+      <input type="radio" name="classType" value="remoto">
+      <label for="remoto">À distância</label>
+    </div>
+
+</div>
+
+<div class="item">
   <div>Área de Atuação</div>
   <div>
-    <input class="type1 small" type="text" name="services" placeholder="Separe os serviços prestados por virgula.">
+    <input class="type1 small" type="text" name="areas" placeholder="Separe os serviços prestados por virgula.">
   </div>
 </div>
 <button type="submit">Salvar</button>
