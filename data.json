@@ -1,19 +1,21 @@
 {
   "teachers": [
     {
-      "id": 1, 
+      "id": 1,
       "avatar_url": "http://google.com",
       "name": "Raphael Bernardo Ohlsen",
       "birth": 49,
       "graduates": [
-        { "value": "M",
+        {
+          "value": "M",
           "description": "Ensino Médio"
         },
-        { "value": "S",
+        {
+          "value": "S",
           "description": "Ensino Superior"
-          
         },
-        { "value": "D",
+        {
+          "value": "D",
           "description": "Mestrado e Doutorado",
           "selected": true
         }
@@ -21,6 +23,35 @@
       "classType": "P",
       "areas": "Matemática, História",
       "created_at": 123456
+    },
+    {
+      "id": 2,
+      "avatar_url": "http://google.com",
+      "name": "Super Dev",
+      "birth": 2851200000,
+      "graduete": "D",
+      "classType": "remoto",
+      "created_at": 1581623871967
+    },
+    {
+      "id": 3,
+      "avatar_url": "http://google.com",
+      "name": "RAPHAEL BERNARDO OHLSEN",
+      "birth": 319075200000,
+      "graduete": "M",
+      "classType": "presencial",
+      "areas": "27",
+      "created_at": 1581624129064
+    },
+    {
+      "id": 4,
+      "avatar_url": "http://google.com",
+      "name": "Loja Virtual",
+      "birth": -1574985600000,
+      "graduete": "S",
+      "classType": "presencial",
+      "areas": "27",
+      "created_at": 1581624192417
     }
   ]
 }

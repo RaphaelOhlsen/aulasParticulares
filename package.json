@@ -8,6 +8,9 @@
     "nodemon": "nodemon server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'"
   },
+  "nodemonConfig": {
+    "ignore": ["*.json"]
+  },
   "dependencies": {
     "express": "^4.17.1",
     "nunjucks": "^3.2.0"
