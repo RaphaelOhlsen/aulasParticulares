@@ -8,5 +8,11 @@ exports.show = (req, res) => {
     return teacher.id === Number(id);
   });
 
-  console.log(foundTeacher);
+  if(!foundTeacher) return res.send("teacher not found");
+
+  const teacher = {
+    ...foundTeacher
+  }
+
+  return res.render("teachers/show", { teacher })
 }

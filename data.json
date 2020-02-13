@@ -5,7 +5,19 @@
       "avatar_url": "http://google.com",
       "name": "Raphael Bernardo Ohlsen",
       "birth": 49,
-      "graduate": "M",
+      "graduates": [
+        { "value": "M",
+          "description": "Ensino Médio"
+        },
+        { "value": "S",
+          "description": "Ensino Superior"
+          
+        },
+        { "value": "D",
+          "description": "Mestrado e Doutorado",
+          "selected": true
+        }
+      ],
       "classType": "P",
       "areas": "Matemática, História",
       "created_at": 123456
