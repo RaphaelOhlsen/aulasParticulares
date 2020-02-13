@@ -76,6 +76,23 @@ header {
   display: grid;
   grid-template-columns: 40% 60%;
   box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.8);
+  animation-name: grow;
+  animation-duration: 600ms;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1)
+  }
+  33% {
+    transform: scale(1.05)
+  }
+  66% {
+    transform: scale(0.95)
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .card .avatar {

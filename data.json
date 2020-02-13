@@ -1,0 +1,14 @@
+{
+  "teachers": [
+    {
+      "id": 1, 
+      "avatar_url": "http://google.com",
+      "name": "Raphael Bernardo Ohlsen",
+      "birth": 49,
+      "graduate": "M",
+      "classType": "P",
+      "areas": "Matemática, História",
+      "created_at": 123456
+    }
+  ]
+}
