@@ -16,3 +16,9 @@ exports.show = (req, res) => {
 
   return res.render("teachers/show", { teacher })
 }
+
+//post
+exports.post = (req, res) => {
+  
+  console.log(req.body);
+}
