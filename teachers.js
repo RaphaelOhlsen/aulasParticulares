@@ -19,6 +19,9 @@ exports.show = (req, res) => {
 
 //post
 exports.post = (req, res) => {
-  
-  console.log(req.body);
+  const keys = Object.keys(req.body);
+
+  keys.forEach(key => {
+    if(req.body[key] == "") return res.send("Please, fill all fields");
+  })
 }
