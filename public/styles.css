@@ -144,3 +144,62 @@ header {
   text-transform: uppercase;
   font-size: 1.2em;
 }
+
+/* FORM */
+form.card input.type1
+{
+  width: 100%;
+  border: none;
+  outline: none;
+  background: hsl(0, 5%, 92%);
+  border-radius: 10px;
+  height: 2.8em;
+  font-weight: 700;
+  font-size: 0.8em;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #555
+}
+
+/* form.card div.teste {
+  display: flex;
+  align-content: center;
+} */
+
+form.card div.wrap-fields {
+  margin: 10px;
+}
+
+form.card input[type="radio"] {
+  margin-right: 8px;
+  height: 12px;
+}
+
+form.card .label {
+  font-size: 14px;
+  color: rgb(71, 70, 70);
+  font-weight: 400;
+}
+
+
+form.card button[type="submit"],
+a.button {
+  margin-top: 32px;
+  font-size: 1.6em;
+  padding: 8px 32px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--color-purple);
+  color: var(--color-backgroundHead);
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  cursor: pointer;
+}
+
+a.button {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+}

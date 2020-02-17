@@ -5,7 +5,7 @@
 <form class="card" method="POST" action="/instructors">
   <section 
     class="avatar"
-    style="background: url({{ instructor.avatar_url }})"
+    style="background: url({{ teacher.avatar_url }})"
   ></section>
   <section class="details">
 
@@ -18,36 +18,29 @@
 
     <div class="item">
       <div>Idade</div>
-      <div>{{ teacher.birth }}</div>
+      <div>{{ teacher.age }}</div>
     </div>
 
      <div class="item">
-      <div>Grau de Escolaridade</div>
-      <select name="select">
-        {% for graduate in teacher.graduates %}
-          <option 
-            value="{{ gradueted.value }}" 
-            {% if graduate.selected %}
-              selected="selected"
-            {% endif %}
-          >
-            {{ graduate.description }}
-          </option>
-        {% endfor %}
-      </select>
+      <div>Escolaridade</div>
+      <div>{{ teacher.graduete }}</div>
     </div>
 
     <div class="item">
-      <div>Acompanhamento</div>
-      {% for service in instructor.services %}
-      <span>{{ service }}</span>
-      {% endfor %}
+      <div>Tipo de Aula</div>   
+      <div>{{ teacher.classType }}</div>
+    </div>
 
+    <div class="item">
+      <div>Matérias</div>
+      {% for area in teacher.areas %}
+        <span>{{ area }}</span>
+      {% endfor %}
     </div>
 
     <div class="item">
       <div>Desde</div>
-      <div>{{ instructor.created_at }}</div>
+      <div>{{ teacher.created_at }}</div>
     </div>
     <a href="#" class="button">Editar</a>
   </section>
