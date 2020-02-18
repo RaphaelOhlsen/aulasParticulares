@@ -146,7 +146,7 @@ header {
 }
 
 /* FORM */
-form.card input.type1
+.card input.type1
 {
   width: 100%;
   border: none;
@@ -166,23 +166,23 @@ form.card input.type1
   align-content: center;
 } */
 
-form.card div.wrap-fields {
+.card div.wrap-fields {
   margin: 10px;
 }
 
-form.card input[type="radio"] {
+.card input[type="radio"] {
   margin-right: 8px;
   height: 12px;
 }
 
-form.card .label {
+.card .label {
   font-size: 14px;
   color: rgb(71, 70, 70);
   font-weight: 400;
 }
 
 
-form.card button[type="submit"],
+button[type="submit"],
 a.button {
   margin-top: 32px;
   font-size: 1.6em;
@@ -202,4 +202,9 @@ a.button {
   box-sizing: border-box;
   text-decoration: none;
   text-align: center;
+}
+
+button.--danger {
+  margin-top: 8px;
+  background-color: lightcoral;
 }
