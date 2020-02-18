@@ -1,11 +1,12 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<form class="card" method="POST" action="/teachers">
+<form class="card" method="POST" action="/teachers?_method=PUT">
   <section class="avatar"></section>
   <section class="details">
     <h3>Editar Professor</h3>
     {% include 'teachers/fields.njk' %}
+    <input type="hidden" name="id" value="{{teacher.id}}">
   </section>
 </form>
 {% endblock content %}

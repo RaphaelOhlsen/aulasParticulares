@@ -70,3 +70,8 @@ exports.edit = (req, res) => {
 
   return res.render("teachers/edit", { teacher });
 }
+
+//put
+exports.put = (req,res) => {
+  console.log('Chegou');
+}
