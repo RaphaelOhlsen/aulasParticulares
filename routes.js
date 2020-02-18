@@ -20,7 +20,7 @@ routes.get('/teachers/:id/edit', teachers.edit);
 
 routes.post('/teachers', teachers.post);
 
-routes.put('/teachers', teachers.put);
+routes.put('/teachers', teachers.update);
 
 routes.get('/students', (req, res) => {
   return res.send("students");

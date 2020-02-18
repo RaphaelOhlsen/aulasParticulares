@@ -38,7 +38,7 @@
       "avatar_url": "http://google.com",
       "name": "RAPHAEL BERNARDO OHLSEN",
       "birth": 319075200000,
-      "graduete": "M",
+      "graduete": "Ensino Médio",
       "classType": "presencial",
       "areas": "27",
       "created_at": 1581624129064
@@ -76,10 +76,10 @@
     {
       "id": 7,
       "avatar_url": "https://source.unsplash.com/collection/8684183/500x500",
-      "name": "Apenas um teste",
+      "name": "Apenas um teste 2",
       "birth": 946684800000,
       "graduete": "Mestrado e Doutorado",
-      "classType": "Presencial",
+      "classType": "À distância",
       "areas": "Apenas teste, teste 2, teste 1000",
       "created_at": 1581944889543
     }
