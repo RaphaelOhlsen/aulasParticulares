@@ -1,6 +1,18 @@
 const fs = require('fs');
-const data = require('./data.json');
-const { age, strToArr, timeFormat, date } = require('./utils');
+const data = require('../data.json');
+const { age, strToArr, timeFormat, date } = require('../utils');
+
+//index
+exports.index = (req,res) => {
+  const teachers = data.teachers;
+
+  teachers.forEach(teacher => {
+    teacher._areas = strToArr(teacher.areas);
+  });
+
+  return res.render('teachers/index', { teachers })
+}
+
 
 //show
 exports.show = (req, res) => {

@@ -1,0 +1,117 @@
+<div class="item">
+  <div>Avatar URL</div>
+  <div>
+    <input 
+      type="url" 
+      name="avatar_url" 
+      placeholder="http://" 
+      value="{{ student.avatar_url }}"
+      class="type1"
+    >
+  </div>
+</div>
+
+<div class="item">
+
+  <div>Professor</div>
+  <div>
+    <input 
+      type="text" 
+      name="name" 
+      placeholder="Nome do Professor" 
+      value="{{ student.name }}"
+      class="type1"
+    >
+  </div>
+</div>
+
+<div class="item">
+  <div>Data de nascimento</div>
+  <div>
+    <input
+     type="date" 
+     name="birth" 
+     class="type1"
+     value="{{ student.birth }}"
+    >
+  </div>
+</div>
+
+<div class="item">
+  <div>Grau de Escolaridade</div>
+  <select name="graduete">
+
+    <option
+     value="Ensino Médio"
+     {% if student.graduete == "Ensino Médio" %}
+      selected
+     {% endif %}
+    >
+      Ensino Médio
+    </option>
+
+    <option 
+      value="Ensino Superior"
+      {% if student.graduete == "Ensino Superior" %}
+      selected
+     {% endif %}
+    >
+      Ensino Superior
+    </option>
+
+    <option
+     value="Mestrado e Doutorado"
+     {% if student.graduete == "Mestrado e Doutorado" %}
+      selected
+     {% endif %}
+    >
+      Mestrado e Doutorado
+    </option>
+
+  </select>
+</div>
+
+<div class="item">
+  <div>Tipo de Aula</div>
+   
+    <div class="wrap-fields">
+      <input
+       type="radio" 
+       id="presencial" 
+       name="classType" 
+       value="Presencial"
+       {% if student.classType == "Presencial" %}
+        checked
+       {% endif %}
+      >
+      <label class="label" for="presencial" >Presencial</label>
+    </div>
+    
+    <div class="wrap-fields">
+      <input 
+        type="radio" 
+        id="remoto" 
+        name="classType" 
+        value="À distância"
+         {% if student.classType == "À distância" %}
+        checked
+       {% endif %}
+      >
+      <label class="label" for="remoto">À distância</label>
+    </div>
+    
+</div>
+
+<div class="item">
+  <div>Área de Atuação</div>
+  <div>
+    <input 
+      class="type1 small" 
+      type="text" 
+      name="areas" 
+      placeholder="Separe as matérias ministradas por virgula."
+      value="{{ student.areas }}"
+    >
+  </div>
+</div>
+<button type="submit">Salvar</button>
