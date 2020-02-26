@@ -13,12 +13,11 @@
 
 <div class="item">
 
-  <div>Professor</div>
+  <div>Aluno</div>
   <div>
     <input 
       type="text" 
       name="name" 
-      placeholder="Nome do Professor" 
       value="{{ student.name }}"
       class="type1"
     >
@@ -38,80 +37,82 @@
 </div>
 
 <div class="item">
-  <div>Grau de Escolaridade</div>
-  <select name="graduete">
+
+  <div>Email</div>
+  <div>
+    <input 
+      type="email" 
+      name="email" 
+      value="{{ student.email }}"
+      class="type1"
+    >
+  </div>
+</div>
+
+
+<div class="item">
+  <div>Ano Escolar</div>
+  <select name="grade">
 
     <option
-     value="Ensino Médio"
-     {% if student.graduete == "Ensino Médio" %}
+     value="5° ano"
+     {% if student.graduete == "5° ano" %}
       selected
      {% endif %}
     >
-      Ensino Médio
+      5° ano 
     </option>
 
     <option 
-      value="Ensino Superior"
-      {% if student.graduete == "Ensino Superior" %}
+      value="6° ano"
+      {% if student.graduete == "6° ano" %}
       selected
      {% endif %}
     >
-      Ensino Superior
+      6° ano
     </option>
 
-    <option
-     value="Mestrado e Doutorado"
-     {% if student.graduete == "Mestrado e Doutorado" %}
+    <option 
+      value="7° ano"
+      {% if student.graduete == "7° ano" %}
       selected
      {% endif %}
     >
-      Mestrado e Doutorado
+      7° ano
+    </option>
+
+    <option 
+      value="8° ano"
+      {% if student.graduete == "8° ano" %}
+      selected
+     {% endif %}
+    >
+      8° ano
+    </option>
+
+    <option 
+      value="9° ano"
+      {% if student.graduete == "9° ano" %}
+      selected
+     {% endif %}
+    >
+      9° ano
     </option>
 
   </select>
 </div>
 
 <div class="item">
-  <div>Tipo de Aula</div>
-   
-    <div class="wrap-fields">
-      <input
-       type="radio" 
-       id="presencial" 
-       name="classType" 
-       value="Presencial"
-       {% if student.classType == "Presencial" %}
-        checked
-       {% endif %}
-      >
-      <label class="label" for="presencial" >Presencial</label>
-    </div>
-    
-    <div class="wrap-fields">
-      <input 
-        type="radio" 
-        id="remoto" 
-        name="classType" 
-        value="À distância"
-         {% if student.classType == "À distância" %}
-        checked
-       {% endif %}
-      >
-      <label class="label" for="remoto">À distância</label>
-    </div>
-    
-</div>
 
-<div class="item">
-  <div>Área de Atuação</div>
+  <div>Carga Horária</div>
   <div>
     <input 
-      class="type1 small" 
-      type="text" 
-      name="areas" 
-      placeholder="Separe as matérias ministradas por virgula."
-      value="{{ student.areas }}"
+      type="number" 
+      name="schoolHours" 
+      value="{{ student.schoolHours }}"
+      class="type1"
     >
   </div>
 </div>
+
 <button type="submit">Salvar</button>

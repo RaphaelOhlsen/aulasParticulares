@@ -6,10 +6,6 @@ const { age, strToArr, timeFormat, date } = require('../utils');
 exports.index = (req,res) => {
   const students = data.students;
 
-  students.forEach(student => {
-    student._areas = strToArr(student.areas);
-  });
-
   return res.render('students/index', { students })
 }
 
