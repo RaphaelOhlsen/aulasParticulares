@@ -4,13 +4,13 @@ const { age, strToArr, timeFormat, date } = require('../utils');
 
 //index
 exports.index = (req,res) => {
-  const teachers = data.teachers;
+  const students = data.students;
 
-  teachers.forEach(teacher => {
-    teacher._areas = strToArr(teacher.areas);
+  students.forEach(student => {
+    student._areas = strToArr(student.areas);
   });
 
-  return res.render('teachers/index', { teachers })
+  return res.render('students/index', { students })
 }
 
 
@@ -18,20 +18,20 @@ exports.index = (req,res) => {
 exports.show = (req, res) => {
   const { id } = req.params;
 
-  const foundTeacher = data.teachers.find(teacher => {
-    return teacher.id === Number(id);
+  const foundstudent = data.students.find(student => {
+    return student.id === Number(id);
   });
 
-  if(!foundTeacher) return res.send("teacher not found");
+  if(!foundstudent) return res.send("student not found");
 
-  const teacher = {
-    ...foundTeacher,
-    age: age(foundTeacher.birth),
-    areas: strToArr(foundTeacher.areas),
-    created_at: timeFormat(foundTeacher.created_at)
+  const student = {
+    ...foundstudent,
+    age: age(foundstudent.birth),
+    areas: strToArr(foundstudent.areas),
+    created_at: timeFormat(foundstudent.created_at)
   }
 
-  return res.render("teachers/show", { teacher });
+  return res.render("students/show", { student });
 }
 
 //post
@@ -46,9 +46,9 @@ exports.post = (req, res) => {
 
   birth = Date.parse(birth);
   const created_at = Date.now();
-  const id = Number(data.teachers.length + 1);
+  const id = Number(data.students.length + 1);
 
-  data.teachers.push({
+  data.students.push({
     id,
     avatar_url,
     name,
@@ -61,7 +61,7 @@ exports.post = (req, res) => {
 
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
     if(err) return res.send("Write file error");
-    return res.redirect("/teachers");
+    return res.redirect("/students");
   });
 }
 
@@ -69,18 +69,18 @@ exports.post = (req, res) => {
 exports.edit = (req, res) => {
   
   const { id } = req.params;
-  const foundTeacher = data.teachers.find(teacher => {
-    return teacher.id === Number(id);
+  const foundstudent = data.students.find(student => {
+    return student.id === Number(id);
   });
 
-  if(!foundTeacher) return res.send("teacher not found");
+  if(!foundstudent) return res.send("student not found");
 
-  const teacher = {
-    ...foundTeacher,
-    birth: date(foundTeacher.birth)
+  const student = {
+    ...foundstudent,
+    birth: date(foundstudent.birth)
   }
 
-  return res.render("teachers/edit", { teacher });
+  return res.render("students/edit", { student });
 }
 
 //put
@@ -88,27 +88,27 @@ exports.update = (req,res) => {
   const { id, birth } = req.body;
   let index = 0;
 
-  const foundTeacher = data.teachers.find((teacher, foundIndex) => {
-    if (teacher.id == Number(id)) {
+  const foundstudent = data.students.find((student, foundIndex) => {
+    if (student.id == Number(id)) {
       index = foundIndex;
       return true
     }
   });
 
-  if(!foundTeacher) return res.send("instructor not found");
+  if(!foundstudent) return res.send("instructor not found");
 
-  const teacher = {
-    ...foundTeacher,
+  const student = {
+    ...foundstudent,
     ...req.body,
     birth: Date.parse(birth),
     id: Number(id)
   };
 
-  data.teachers[index] = teacher;
+  data.students[index] = student;
 
   fs.writeFile("data.json", JSON.stringify(data, null, 2), err => {
     if(err) return res.send("Write error!");
-    return res.redirect(`/teachers/${id}`);
+    return res.redirect(`/students/${id}`);
   });
 }
 
@@ -116,14 +116,14 @@ exports.update = (req,res) => {
 exports.delete = (req,res) => {
   const {id} = req.body;
 
-  const filterTeachers = data.teachers.filter(instructor => {
+  const filterstudents = data.students.filter(instructor => {
     return instructor.id != id;
   });
 
-  data.teachers = filterTeachers;
+  data.students = filterstudents;
 
   fs.writeFile("data.json", JSON.stringify(data, null, 2), err => {
     if(err) return res.send("Write error!");
-    return res.redirect("/teachers");
+    return res.redirect("/students");
   });
 }
