@@ -42,8 +42,11 @@ exports.post = (req, res) => {
 
   birth = Date.parse(birth);
 
-  let id = data.students.length;
-  id ? ++id : id = 1;
+  let id = 1;
+  const lastStudent = data.students[data.students.length - 1];
+  if(lastStudent) {
+    id = lastStudent.id + 1;
+  }
 
   data.students.push({
     id,
