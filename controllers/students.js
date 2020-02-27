@@ -38,21 +38,21 @@ exports.post = (req, res) => {
     if(req.body[key] == "") return res.send("Please, fill all fields");
   });
 
-  let {avatar_url, birth, name, graduete, classType, areas} = req.body;
+  let {avatar_url, birth, name, email, grade, schoolHours} = req.body;
 
   birth = Date.parse(birth);
-  const created_at = Date.now();
-  const id = Number(data.students.length + 1);
+
+  let id = data.students.length;
+  id ? ++id : id = 1;
 
   data.students.push({
     id,
     avatar_url,
     name,
     birth, 
-    graduete,
-    classType,
-    areas,
-    created_at
+    email,
+    grade,
+    schoolHours
   });
 
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
