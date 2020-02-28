@@ -55,8 +55,8 @@
   <select name="grade">
 
     <option
-     value="5° ano"
-     {% if student.graduete == "5° ano" %}
+     value="5EF"
+     {% if student.grade == "5EF" %}
       selected
      {% endif %}
     >
@@ -64,8 +64,8 @@
     </option>
 
     <option 
-      value="6° ano"
-      {% if student.graduete == "6° ano" %}
+      value="6EF"
+      {% if student.grade == "6EF" %}
       selected
      {% endif %}
     >
@@ -73,8 +73,8 @@
     </option>
 
     <option 
-      value="7° ano"
-      {% if student.graduete == "7° ano" %}
+      value="7EF"
+      {% if student.grade == "7EF" %}
       selected
      {% endif %}
     >
@@ -82,8 +82,8 @@
     </option>
 
     <option 
-      value="8° ano"
-      {% if student.graduete == "8° ano" %}
+      value="8EF"
+      {% if student.grade == "8EF" %}
       selected
      {% endif %}
     >
@@ -91,8 +91,8 @@
     </option>
 
     <option 
-      value="9° ano"
-      {% if student.graduete == "9° ano" %}
+      value="9EF"
+      {% if student.grade == "9EF" %}
       selected
      {% endif %}
     >
@@ -108,6 +108,7 @@
   <div>
     <input 
       type="number" 
+      placeholder = "Entrar com número de horas"
       name="schoolHours" 
       value="{{ student.schoolHours }}"
       class="type1"

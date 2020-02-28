@@ -12,36 +12,30 @@
     <h3>Detalhes</h3>
 
     <div class="item">
-      <div>Professor</div>
+      <div>Aluno</div>
       <div>{{ student.name }}</div>
     </div>
 
     <div class="item">
-      <div>Idade</div>
-      <div>{{ student.age }}</div>
+      <div>Aniversário</div>
+      <div>{{ student.birth }}</div>
     </div>
 
      <div class="item">
-      <div>Escolaridade</div>
-      <div>{{ student.graduete }}</div>
+      <div>Email</div>
+      <div>{{ student.email }}</div>
     </div>
 
     <div class="item">
-      <div>Tipo de Aula</div>   
-      <div>{{ student.classType }}</div>
+      <div>Ano Escolar</div>   
+      <div>{{ student.grade }}</div>
     </div>
 
     <div class="item">
-      <div>Matérias</div>
-      {% for area in student.areas %}
-        <span>{{ area }}</span>
-      {% endfor %}
+      <div>Carga Horária</div>
+      <div>{{ student.schoolHours}} horas</div>
     </div>
 
-    <div class="item">
-      <div>Desde</div>
-      <div>{{ student.created_at }}</div>
-    </div>
     <a href="/students/{{student.id}}/edit" class="button">Editar</a>
   </section>
 </form>

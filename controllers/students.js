@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('../data.json');
-const { age, strToArr, timeFormat, date } = require('../utils');
+const { grade, date } = require('../utils');
 
 //index
 exports.index = (req,res) => {
@@ -22,9 +22,8 @@ exports.show = (req, res) => {
 
   const student = {
     ...foundstudent,
-    age: age(foundstudent.birth),
-    areas: strToArr(foundstudent.areas),
-    created_at: timeFormat(foundstudent.created_at)
+    birth: date(foundstudent.birth).birthDay,
+    grade: grade(foundstudent.grade)
   }
 
   return res.render("students/show", { student });
@@ -76,7 +75,7 @@ exports.edit = (req, res) => {
 
   const student = {
     ...foundstudent,
-    birth: date(foundstudent.birth)
+    birth: date(foundstudent.birth).birthDay
   }
 
   return res.render("students/edit", { student });

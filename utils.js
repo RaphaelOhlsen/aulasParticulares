@@ -24,6 +24,27 @@ module.exports = {
     const year = date.getUTCFullYear();
     const month = `0${date.getUTCMonth() + 1}`.slice(-2);
     const day = `0${date.getUTCDate()}`.slice(-2);
-    return `${year}-${month}-${day}`;
+    return {
+      day,
+      month, 
+      year,
+      iso: `${year}-${month}-${day}`,
+      birthDay: `${day}/${month}`
+    }   
+  },
+  grade: grade => {
+    switch (grade) {
+      case '5EF':
+        return '5° ano fundamental'
+      case '6EF':
+        return '6° ano fundamental'
+      case '7EF':
+        return '7° ano fundamental'
+      case '8EF':
+        return '8° ano fundamental';
+      case '9EF':
+        return '9° ano fundamental'
+    }
+    
   }
 }

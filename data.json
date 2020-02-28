@@ -4,20 +4,20 @@
       "id": 1,
       "avatar_url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       "name": "RAPHAEL BERNARDO OHLSEN",
-      "birth": 978307200000,
+      "birth": 1009843200000,
       "email": "raphael.ohlsen@gmail.com",
-      "grade": "5° ano",
+      "grade": "8EF",
       "schoolHours": "900"
     }
   ],
   "teachers": [
     {
       "id": 6,
-      "avatar_url": "http://4linux.com",
+      "avatar_url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       "name": "Almeida Ramos",
-      "birth": 1585785600000,
-      "graduete": "S",
-      "classType": "À distância",
+      "birth": -2208988800000,
+      "graduete": "Ensino Médio",
+      "classType": "Presencial",
       "areas": "teste, teste 1, teste 2",
       "created_at": 1581944666218,
       "_areas": [
