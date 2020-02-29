@@ -13,7 +13,7 @@
         {% include 'teachers/fields.njk' %}
         <input type="hidden" name="id" value="{{teacher.id}}">
       </form>
-      <form method="POST" action="/teachers?_method=DELETE">
+      <form id="form-delete" method="POST" action="/teachers?_method=DELETE">
         <input type="hidden" name="id" value="{{teacher.id}}">
         <button class="--danger" type="submit">Deletar</button>
       </form>
