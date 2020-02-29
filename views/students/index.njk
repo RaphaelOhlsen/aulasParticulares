@@ -7,8 +7,9 @@
     <table width="100%">
       <thead>
         <tr>
-          <th>Professor</th>
-          <th>Matéria</th>
+          <th>Aluno</th>
+          <th>Email</th>
+          <th>Ano Escolar</th>
           <th>Ação</th>
         </tr>
       </thead>
@@ -18,13 +19,10 @@
             <td>
               <span style="background-image: url({{student.avatar_url}})">
               </span>
-              {{student.name}}
+              <p>{{student.name}}</p>
             </td>
-            <td>
-              {% for area in student._areas %}
-                <span class="area">{{ area }}</span>
-              {% endfor %}
-            </td>
+            <td>{{student.email}}</td>
+            <td>{{student._grade}}</td>
             <td><a href="/students/{{student.id}}">Ver</a></td>
           </tr>
         {% endfor %}

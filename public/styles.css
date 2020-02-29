@@ -236,7 +236,7 @@ td, th {
 
 td {
   font-size: 1.6em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #333
 }
 
@@ -263,6 +263,10 @@ tbody tr td:first-child span {
   border-radius: 50%;
   box-shadow: 3px 1px 6px -4px #000;
   border: 2px solid #fff;
+}
+
+tbody tr td:first-child p {
+  text-transform: none;
 }
 
 tbody tr td:last-child a,

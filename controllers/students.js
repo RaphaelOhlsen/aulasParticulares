@@ -5,7 +5,9 @@ const { grade, date } = require('../utils');
 //index
 exports.index = (req,res) => {
   const students = data.students;
-
+  students.forEach(student => {
+    student._grade = grade(student.grade);
+  });
   return res.render('students/index', { students })
 }
 
@@ -75,7 +77,7 @@ exports.edit = (req, res) => {
 
   const student = {
     ...foundstudent,
-    birth: date(foundstudent.birth).birthDay
+    birth: date(foundstudent.birth).iso
   }
 
   return res.render("students/edit", { student });
