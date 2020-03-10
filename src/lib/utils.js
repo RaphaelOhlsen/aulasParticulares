@@ -1,7 +1,7 @@
 const Intl = require('intl');
 
 module.exports = {
-  age: timestamp => {
+  age(timestamp){
     const today = new Date();
     const birthDate = new Date(timestamp);
     let age = today.getFullYear() - birthDate.getFullYear();
@@ -13,13 +13,13 @@ module.exports = {
 
     return age;
   },
-  strToArr: str => {
+  strToArr(str) {
     return str.split(',').map(el => el.trim());
   },
-  timeFormat: timestamp => {
+  timeFormat(timestamp) {
     return new Intl.DateTimeFormat("pt-BR").format(timestamp);
   },
-  date: timestamp => {
+  date(timestamp) {
     const date = new Date(timestamp);
     const year = date.getUTCFullYear();
     const month = `0${date.getUTCMonth() + 1}`.slice(-2);
@@ -29,10 +29,11 @@ module.exports = {
       month, 
       year,
       iso: `${year}-${month}-${day}`,
-      birthDay: `${day}/${month}`
+      birthDay: `${day}/${month}`,
+      format: `${day}/${month}/${year}`
     }   
   },
-  grade: grade => {
+  grade(grade) {
     switch (grade) {
       case '5EF':
         return '5° ano fundamental'
