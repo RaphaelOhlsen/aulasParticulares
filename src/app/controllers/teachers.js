@@ -32,7 +32,17 @@ module.exports = {
   },
   
   show(req,res) {
-    return
+    Teacher.find(req.params.id, function(teacher) {
+      if(!teacher) return res.send("Teacher not found!");
+      console.log(teacher);
+
+      teacher.age = age(teacher.birth);
+      teacher.areas = teacher.areas.split(',');
+      teacher.classType = teacher.classtype;
+      teacher.created_at = date(teacher.created_at).format;
+      
+      return res.render('teachers/show', { teacher });
+    });
   },
 
   edit(req,res) {
