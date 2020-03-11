@@ -1,11 +1,16 @@
 const { age, strToArr, timeFormat, date } = require('../../lib/utils');
-// const db = require('../../config/db');
+
 const Teacher = require('../models/Teacher');
 
 module.exports = {
   index(req,res) {
-
-    return res.render('teachers/index')
+    Teacher.all(function(teachers) {
+      teachers.forEach(teacher => {
+        const areas = teacher.areas.toString().split(',');
+        teacher.areas = areas
+      })
+      return res.render('teachers/index', { teachers });
+    });
   },
 
   create(req, res) {
@@ -20,34 +25,6 @@ module.exports = {
       if(req.body[key] == "") return res.send("Please, fill all fields");
     });
         
-    // const query = `
-    //   INSERT INTO teachers (
-    //     avatar_url,
-    //     name,
-    //     birth,
-    //     graduete,
-    //     classtype,
-    //     areas,
-    //     created_at
-    //   ) VALUES ($1, $2, $3, $4, $5, $6, $7)
-    //   RETURNING id
-    // `;
-
-    // const values = [
-    //   req.body.avatar_url,
-    //   req.body.name,
-    //   date(req.body.birth).iso,
-    //   req.body.graduete,
-    //   req.body.classType,
-    //   req.body.areas,
-    //   date(Date.now()).iso
-    // ];
-
-    // db.query(query, values, (err, results) => {
-    //   console.log(err);
-    //   console.log(results);
-    // })
-    
     Teacher.create(req.body, function(teacher){
       return res.redirect('/teachers/${teacher.id');
     });
