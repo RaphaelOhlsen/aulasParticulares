@@ -1,14 +1,11 @@
 const { age, strToArr, timeFormat, date } = require('../../lib/utils');
+const Student = require('../models/Student');
 
 module.exports = {
   index(req,res) {
-    const students = data.students;
-
-    students.forEach(student => {
-      student._areas = strToArr(student.areas);
+    Student.all(function(students) {
+      return res.render('students/index', { students });
     });
-
-    return res.render('students/index', { students })
   },
 
   create(req, res) {
