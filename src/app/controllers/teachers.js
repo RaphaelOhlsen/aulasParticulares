@@ -34,19 +34,23 @@ module.exports = {
   show(req,res) {
     Teacher.find(req.params.id, function(teacher) {
       if(!teacher) return res.send("Teacher not found!");
-      console.log(teacher);
 
       teacher.age = age(teacher.birth);
       teacher.areas = teacher.areas.split(',');
       teacher.classType = teacher.classtype;
       teacher.created_at = date(teacher.created_at).format;
-      
+
       return res.render('teachers/show', { teacher });
     });
   },
 
   edit(req,res) {
-    return
+    Teacher.find(req.params.id, function(teacher) {
+      if(!teacher) return res.send("Teacher not found!");
+      teacher.classType = teacher.classtype;
+      teacher.birth = date(teacher.birth).iso;
+      return res.render('teachers/edit', { teacher });
+    })
   },
 
   put(req,res) {
@@ -57,7 +61,9 @@ module.exports = {
       if(req.body[key] == "") return res.send("Please, fill all fields");
     });
 
-    return
+    Teacher.update(req.body, function() { 
+      return res.redirect(`/teachers/${req.body.id}`);
+    })
   },
 
   delete(req,res) {

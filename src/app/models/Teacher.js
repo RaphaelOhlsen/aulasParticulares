@@ -54,4 +54,34 @@ module.exports = {
       callback(results.rows[0]);
     });
   },
+
+  update(data, callback) {
+    const query = `
+      UPDATE teachers SET
+        avatar_url=($1),
+        name=($2),
+        birth=($3),
+        graduete=($4),
+        classtype=($5),
+        areas=($6),
+        created_at=($7)
+      WHERE id = $8
+    `;
+
+    const values = [
+      data.avatar_url,
+      data.name,
+      date(data.birth).iso,
+      data.graduete,
+      data.classType,
+      data.areas,
+      date(Date.now()).iso,
+      data.id
+    ];
+
+    db.query(query, values, function(err, results) {
+      if(err) throw `Database Error! ${err}`;
+      callback();
+    })
+  }
 }
