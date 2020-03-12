@@ -24,6 +24,6 @@ routes.get('/students/:id', students.show);
 routes.get('/students/:id/edit', students.edit);
 routes.delete('/students', students.delete);
 routes.post('/students', students.post);
-// routes.put('/students', students.update);
+routes.put('/students', students.put);
 
 module.exports = routes;

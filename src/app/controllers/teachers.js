@@ -8,7 +8,7 @@ module.exports = {
       teachers.forEach(teacher => {
         const areas = teacher.areas.toString().split(',');
         teacher.areas = areas
-      })
+      });
       return res.render('teachers/index', { teachers });
     });
   },
@@ -63,13 +63,13 @@ module.exports = {
 
     Teacher.update(req.body, function() { 
       return res.redirect(`/teachers/${req.body.id}`);
-    })
+    });
   },
 
   delete(req,res) {
     Teacher.delete(req.body.id, function() {
       return res.redirect(`/teachers`);
-    })
+    });
   }
 
 }
