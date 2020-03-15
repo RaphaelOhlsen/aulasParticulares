@@ -12,7 +12,10 @@ module.exports = {
   },
 
   create(req, res) {
-    return res.render('students/create');
+    console.log('teste');
+    Student.teacherSelectOptions(function(options) {
+      return res.render("students/create", { teacherOptions: options});
+    });
   },
 
   
@@ -24,7 +27,7 @@ module.exports = {
     });
     
     Student.create(req.body, function(student) {
-      return res.redirect('/students/${student.id');
+      return res.redirect(`/students/${student.id}`);
     })
   },
   

@@ -161,9 +161,21 @@ header {
   color: #555
 }
 
-/* form.card div.teste {
-  display: flex;
-  align-content: center;
+.card select,
+.card option {
+  width: 100%;
+  padding: 0 10px;
+  height: 2.8em;
+  font-weight: 700;
+  color: #555;
+  font-size: 16px;
+  border-radius: 10px;
+  background: hsl(0, 5%, 92%);
+}
+
+/* .card select option {
+  font-weight: 700;
+  padding: 10px;
 } */
 
 .card div.wrap-fields {
@@ -281,7 +293,7 @@ tbody tr td:last-child a,
 }
 
 .table-container a:first-child {
-  display: inline-block;
+  /* display: inline-block; */
   margin-bottom: 13px;
 }
 
@@ -297,4 +309,40 @@ tbody tr td span.area {
 
 tbody tr td span.area:last-child {
   margin: 0;
+}
+
+/* FILTERS */
+.table-container .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.table-container .header a {
+  margin: 0;
+  text-transform: none;
+  width: 120px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.table-container .header form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  grid-gap: 8px
+}
+
+.table-container .header form input {
+  border: 1px solid #eee;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+.table-container .header form button {
+  margin: 0;
+  text-transform: none;
+  font-weight: 400;
+  border-radius: 4px;
 }

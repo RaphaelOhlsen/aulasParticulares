@@ -17,9 +17,7 @@ routes.put('/teachers', teachers.put);
 
 
 routes.get("/students", students.index );
-routes.get("/students/create", (req,res) => {
-  return res.render("students/create");
-})
+routes.get("/students/create", students.create);
 routes.get('/students/:id', students.show);
 routes.get('/students/:id/edit', students.edit);
 routes.delete('/students', students.delete);
