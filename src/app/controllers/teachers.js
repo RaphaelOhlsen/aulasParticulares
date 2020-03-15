@@ -5,10 +5,10 @@ const Teacher = require('../models/Teacher');
 module.exports = {
   index(req,res) {
     Teacher.all(function(teachers) {
-      teachers.forEach(teacher => {
-        const areas = teacher.areas.toString().split(',');
-        teacher.areas = areas
-      });
+      // teachers.forEach(teacher => {
+      //   const areas = teacher.areas.toString().split(',');
+      //   teacher.areas = areas
+      // });
       return res.render('teachers/index', { teachers });
     });
   },

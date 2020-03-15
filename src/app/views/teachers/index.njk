@@ -8,6 +8,7 @@
         <tr>
           <th>Professor</th>
           <th>Matéria</th>
+          <th>Alunos</th>
           <th>Ação</th>
         </tr>
       </thead>
@@ -20,10 +21,9 @@
               <p>{{teacher.name}}</p>
             </td>
             <td>
-              {% for area in teacher.areas %}
-                <span class="area">{{ area }}</span>
-              {% endfor %}
+                <span class="area">{{ teacher.areas }}</span>
             </td>
+            <td>{{ teacher.total_students }}</td>
             <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
           </tr>
         {% endfor %}
