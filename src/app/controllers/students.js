@@ -3,16 +3,32 @@ const Student = require('../models/Student');
 
 module.exports = {
   index(req,res) {
-    Student.all(function(students) {
-      students.forEach(student => {
-        student.grade = grade(student.grade);
-      });
-      return res.render('students/index', { students });
-    });
+    let {filter, page = 1, limit = 3} = req.query;
+    let offset = limit * (page - 1);
+    const params = {
+      filter,
+      page,
+      limit,
+      offset,
+      callback(students) {
+        let total = 0;
+        if(students[0] !== undefined)
+          total = Math.ceil(students[0].total/limit);
+        students.forEach(student => {
+          student.grade = grade(student.grade);
+        });
+        const pagination = {
+          total,
+          page
+        }
+        return res.render("students/index",
+          { students, filter, pagination})
+      }
+    };
+    Student.paginate(params);
   },
 
   create(req, res) {
-    console.log('teste');
     Student.teacherSelectOptions(function(options) {
       return res.render("students/create", { teacherOptions: options});
     });

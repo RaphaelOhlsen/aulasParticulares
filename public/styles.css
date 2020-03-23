@@ -282,7 +282,7 @@ tbody tr td:first-child p {
 }
 
 tbody tr td:last-child a,
-.table-container a:first-child {
+.table-container tr a:first-child {
   background-color: var(--color-purple);
   padding: 8px 16px;
   text-decoration: none;
@@ -345,4 +345,34 @@ tbody tr td span.area:last-child {
   text-transform: none;
   font-weight: 400;
   border-radius: 4px;
+}
+
+/* PAGINATION */
+.table-container {
+  display: grid;
+  grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+  margin: 0;
+  align-self: start;
+}
+
+.table-container .pagination {
+  margin-top: 15px;
+  justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+  color: var(--color-purple);
+  text-decoration: none;
+  margin-right: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pagination a:hover {
+  filter: brightness(0.3);
+  border-bottom: 1px solid var(--color-purple);
 }

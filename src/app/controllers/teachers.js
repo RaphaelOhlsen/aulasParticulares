@@ -6,15 +6,21 @@ module.exports = {
   index(req,res) {
     let { filter, page = 1, limit = 3 } = req.query;
     let offset = limit * (page -1);
-
     const params = {
       filter, 
       page,
       limit,
       offset,
       callback(teachers) {
+        let total = 0
+        if(teachers[0] !== undefined)
+          total = Math.ceil(teachers[0].total/limit);
+        const pagination = {
+          total,
+          page
+        }
         return res.render("teachers/index",
-          { teachers, filter })
+          { teachers, filter, pagination })
       }
     };
 
